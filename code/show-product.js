@@ -18,25 +18,10 @@ function showListProduct() {
       createProductElement("td", undefined, productName),
       createProductElement("td", undefined, quantity),
       createProductElement("td", undefined, price),
-      createProductElement(
-        "td",
-        undefined,
-        "<span class='icon'>&#128221;</span>",
-        undefined,
-        editClickEvent,
-        e
-      ),
-      createProductElement(
-        "td",
-        undefined,
-        quantity > 0 ? "&#9989;" : "&#10060;"
-      ),
+      createProductElement("td", undefined, "<span class='icon'>&#128221;</span>", undefined, editClickEvent, e),
+      createProductElement("td", undefined, quantity > 0 ? "&#9989;" : "&#10060;"),
       createProductElement("td", undefined, date),
-      createProductElement(
-        "td",
-        undefined,
-        "<span class='icon'>&#128465;</span>"
-      ),
+      createProductElement("td", undefined, "<span class='icon'>&#128465;</span>"),
     ];
     tr.append(...tds);
     return tr;
@@ -54,14 +39,7 @@ function editClickEvent(e) {
   });
 
   const div = createProductElement("div", "btn-edit-product");
-  const save = createProductElement(
-    "button",
-    "save-product",
-    "Зберегти",
-    undefined,
-    saveProduct,
-    e
-  );
+  const save = createProductElement("button", "save-product", "Зберегти", undefined, saveProduct, e);
   div.append(save);
 
   mw.append(...product, div);

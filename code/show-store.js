@@ -75,10 +75,3 @@ function saveProduct(oldObject) {
   localStorage.storeBD = JSON.stringify(arrStore);
   showListStore();
 }
-
-// this.movieName = movieName;
-//   this.movieReleasedYear = movieReleasedYear;
-//   this.movieImage = movieImage;
-//   this.movieDirector = movieDirector;
-//   this.movieDescription = movieDescription;
-//   this.actors = actors.split(",");

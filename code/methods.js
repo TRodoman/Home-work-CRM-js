@@ -68,16 +68,7 @@ export function showInputModal(category) {
         </form>
         ` 
     }
-    // this.movieName = movieName;
-    // this.movieReleasedYear = movieReleasedYear;
-    // this.movieImage = movieImage;
-    // this.movieDirector = movieDirector;
-    // this.movieDescription = movieDescription;
-
-    // this.movilink = movilink;
-
-
-
+    
 
     // інтеграція готової форми на html сторінку
     body_modal
@@ -142,6 +133,7 @@ export function addProduct(category) {
         const restorationBD = JSON.parse(localStorage.restorationBD);
         restorationBD.push(new RestorationProduct(obj));
         localStorage.restorationBD = JSON.stringify(restorationBD);
+
         const alertOk = document.querySelector(".alert-ok");
         alertOk.classList.remove("hide"); 
         alertOk.innerHTML = "Ви успішно зберегли дані про старву!"
@@ -150,10 +142,19 @@ export function addProduct(category) {
         const storeBD = JSON.parse(localStorage.storeBD);
         storeBD.push(new StoreProduct(obj));
         localStorage.storeBD = JSON.stringify(storeBD);
+        const alertOk = document.querySelector(".alert-ok");
+        alertOk.classList.remove("hide"); 
+        alertOk.innerHTML = "Ви успішно зберегли дані про товар!"
+        setTimeout(()=>{alertOk.classList.add("hide"); }, 2000)
+
     }else if(category === "Відео хостинг"){
         const videoBD = JSON.parse(localStorage.videoBD);
         videoBD.push(new VideoHosting(obj));
         localStorage.videoBD = JSON.stringify(videoBD);
+        const alertOk = document.querySelector(".alert-ok");
+        alertOk.classList.remove("hide"); 
+        alertOk.innerHTML = "Ви успішно зберегли дані про фільм!"
+        setTimeout(()=>{alertOk.classList.add("hide"); }, 2000)
     }
     
     document.querySelector(".container-modal").classList.add("hide")
